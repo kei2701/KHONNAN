@@ -1,0 +1,22 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    fabric8.io/git-commit: 6211f2a930ea4e3eba7e5539b4e13fa4af65ef1e
+    fabric8.io/git-branch: main
+    fabric8.io/git-url: https://github.com/kei2701/DTDM.git
+    fabric8.io/scm-url: https://github.com/spring-projects/spring-boot/CurrencyExchange
+    fabric8.io/scm-tag: HEAD
+  labels:
+    app: CurrencyExchange
+    provider: fabric8
+    version: 1.0.0
+    group: com
+  name: currencyexchange
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: currencyexchange

@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: List
+items:
+- apiVersion: image.openshift.io/v1
+  kind: ImageStream
+  metadata:
+    name: currencyexchange
+  spec:
+    tags:
+    - from:
+        kind: ImageStreamImage
+        name: currencyexchange@sha256:f7c0c6ae6c0bdecbf70e164ba40b485efca001e48f83ddf975cdb5b77241aa9c
+        namespace: quocbaost2002-dev
+      name: 1.0.0

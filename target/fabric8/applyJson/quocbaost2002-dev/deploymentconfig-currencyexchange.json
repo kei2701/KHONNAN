@@ -1,0 +1,253 @@
+{
+  "apiVersion" : "apps.openshift.io/v1",
+  "kind" : "DeploymentConfig",
+  "metadata" : {
+    "annotations" : {
+      "fabric8.io/git-branch" : "main",
+      "fabric8.io/git-commit" : "6211f2a930ea4e3eba7e5539b4e13fa4af65ef1e",
+      "fabric8.io/git-url" : "https://github.com/kei2701/DTDM.git",
+      "fabric8.io/scm-tag" : "HEAD",
+      "fabric8.io/scm-url" : "https://github.com/spring-projects/spring-boot/CurrencyExchange"
+    },
+    "creationTimestamp" : "2022-12-05T17:52:24Z",
+    "generation" : 1,
+    "labels" : {
+      "app" : "CurrencyExchange",
+      "group" : "com",
+      "provider" : "fabric8",
+      "version" : "1.0.0"
+    },
+    "managedFields" : [ {
+      "apiVersion" : "apps.openshift.io/v1",
+      "fieldsType" : "FieldsV1",
+      "fieldsV1" : {
+        "f:metadata" : {
+          "f:annotations" : {
+            "." : { },
+            "f:fabric8.io/git-branch" : { },
+            "f:fabric8.io/git-commit" : { },
+            "f:fabric8.io/git-url" : { },
+            "f:fabric8.io/scm-tag" : { },
+            "f:fabric8.io/scm-url" : { }
+          },
+          "f:labels" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { },
+            "f:version" : { }
+          }
+        },
+        "f:spec" : {
+          "f:replicas" : { },
+          "f:revisionHistoryLimit" : { },
+          "f:selector" : {
+            "." : { },
+            "f:app" : { },
+            "f:group" : { },
+            "f:provider" : { }
+          },
+          "f:strategy" : {
+            "f:activeDeadlineSeconds" : { },
+            "f:rollingParams" : {
+              "." : { },
+              "f:intervalSeconds" : { },
+              "f:maxSurge" : { },
+              "f:maxUnavailable" : { },
+              "f:timeoutSeconds" : { },
+              "f:updatePeriodSeconds" : { }
+            },
+            "f:type" : { }
+          },
+          "f:template" : {
+            "." : { },
+            "f:metadata" : {
+              "." : { },
+              "f:annotations" : {
+                "." : { },
+                "f:fabric8.io/git-branch" : { },
+                "f:fabric8.io/git-commit" : { },
+                "f:fabric8.io/git-url" : { },
+                "f:fabric8.io/scm-tag" : { },
+                "f:fabric8.io/scm-url" : { }
+              },
+              "f:creationTimestamp" : { },
+              "f:labels" : {
+                "." : { },
+                "f:app" : { },
+                "f:group" : { },
+                "f:provider" : { },
+                "f:version" : { }
+              }
+            },
+            "f:spec" : {
+              "." : { },
+              "f:containers" : {
+                "." : { },
+                "k:{\"name\":\"spring-boot\"}" : {
+                  "." : { },
+                  "f:env" : {
+                    "." : { },
+                    "k:{\"name\":\"KUBERNETES_NAMESPACE\"}" : {
+                      "." : { },
+                      "f:name" : { },
+                      "f:valueFrom" : {
+                        "." : { },
+                        "f:fieldRef" : { }
+                      }
+                    }
+                  },
+                  "f:image" : { },
+                  "f:imagePullPolicy" : { },
+                  "f:name" : { },
+                  "f:ports" : {
+                    "." : { },
+                    "k:{\"containerPort\":8080,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    },
+                    "k:{\"containerPort\":8778,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    },
+                    "k:{\"containerPort\":9779,\"protocol\":\"TCP\"}" : {
+                      "." : { },
+                      "f:containerPort" : { },
+                      "f:name" : { },
+                      "f:protocol" : { }
+                    }
+                  },
+                  "f:resources" : { },
+                  "f:securityContext" : {
+                    "." : { },
+                    "f:privileged" : { }
+                  },
+                  "f:terminationMessagePath" : { },
+                  "f:terminationMessagePolicy" : { }
+                }
+              },
+              "f:dnsPolicy" : { },
+              "f:restartPolicy" : { },
+              "f:schedulerName" : { },
+              "f:securityContext" : { },
+              "f:terminationGracePeriodSeconds" : { }
+            }
+          },
+          "f:triggers" : { }
+        }
+      },
+      "manager" : "okhttp",
+      "operation" : "Update",
+      "time" : "2022-12-05T17:52:24Z"
+    } ],
+    "name" : "currencyexchange",
+    "namespace" : "quocbaost2002-dev",
+    "resourceVersion" : "1793108552",
+    "uid" : "c1374854-bc24-4e37-b69a-42cb5e090863"
+  },
+  "spec" : {
+    "replicas" : 1,
+    "revisionHistoryLimit" : 2,
+    "selector" : {
+      "app" : "CurrencyExchange",
+      "group" : "com",
+      "provider" : "fabric8"
+    },
+    "strategy" : {
+      "activeDeadlineSeconds" : 21600,
+      "resources" : { },
+      "rollingParams" : {
+        "intervalSeconds" : 1,
+        "maxSurge" : "25%",
+        "maxUnavailable" : "25%",
+        "timeoutSeconds" : 3600,
+        "updatePeriodSeconds" : 1
+      },
+      "type" : "Rolling"
+    },
+    "template" : {
+      "metadata" : {
+        "annotations" : {
+          "fabric8.io/git-branch" : "main",
+          "fabric8.io/git-commit" : "6211f2a930ea4e3eba7e5539b4e13fa4af65ef1e",
+          "fabric8.io/git-url" : "https://github.com/kei2701/DTDM.git",
+          "fabric8.io/scm-tag" : "HEAD",
+          "fabric8.io/scm-url" : "https://github.com/spring-projects/spring-boot/CurrencyExchange"
+        },
+        "labels" : {
+          "app" : "CurrencyExchange",
+          "group" : "com",
+          "provider" : "fabric8",
+          "version" : "1.0.0"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "apiVersion" : "v1",
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          } ],
+          "image" : "image-registry.openshift-image-registry.svc:5000/quocbaost2002-dev/currencyexchange@sha256:f7c0c6ae6c0bdecbf70e164ba40b485efca001e48f83ddf975cdb5b77241aa9c",
+          "imagePullPolicy" : "IfNotPresent",
+          "name" : "spring-boot",
+          "ports" : [ {
+            "containerPort" : 8080,
+            "name" : "http",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 9779,
+            "name" : "prometheus",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 8778,
+            "name" : "jolokia",
+            "protocol" : "TCP"
+          } ],
+          "resources" : { },
+          "securityContext" : {
+            "privileged" : false
+          },
+          "terminationMessagePath" : "/dev/termination-log",
+          "terminationMessagePolicy" : "File"
+        } ],
+        "dnsPolicy" : "ClusterFirst",
+        "restartPolicy" : "Always",
+        "schedulerName" : "default-scheduler",
+        "securityContext" : { },
+        "terminationGracePeriodSeconds" : 30
+      }
+    },
+    "test" : false,
+    "triggers" : [ {
+      "type" : "ConfigChange"
+    }, {
+      "imageChangeParams" : {
+        "automatic" : true,
+        "containerNames" : [ "spring-boot" ],
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "currencyexchange:1.0.0",
+          "namespace" : "quocbaost2002-dev"
+        }
+      },
+      "type" : "ImageChange"
+    } ]
+  },
+  "status" : {
+    "availableReplicas" : 0,
+    "latestVersion" : 0,
+    "observedGeneration" : 0,
+    "replicas" : 0,
+    "unavailableReplicas" : 0,
+    "updatedReplicas" : 0
+  }
+}
